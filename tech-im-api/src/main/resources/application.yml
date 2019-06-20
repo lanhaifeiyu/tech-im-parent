@@ -2,12 +2,12 @@ logging:
     config: classpath:logback.xml
 spring:
     application:
-        name: tech-im-provider
+        name: tech-blog-provider
     main:
         allow-bean-definition-overriding: true
     datasource:
         name: druidDataSource
-        driver-class-name: com.mysql.cj.jdbc.Driver
+        driver-class-name: com.mysql.jdbc.Driver
         url: jdbc:mysql://localhost:3306/tech_blog?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2B8
         username: root
         password: root
@@ -137,9 +137,9 @@ mybatis:
     configuration:
         map-underscore-to-camel-case: true
     type-aliases-package: com.lhfeiyu.tech.mapper.model
-    mapper-locations: classpath*:com.lhfeiyu.tech.im.mapper/*.xml
+    mapper-locations: classpath*:com.lhfeiyu.tech.blog.mapper/*.xml
 server:
-    port: 8889
+    port: 8888
     error:
         path: /custom/error
     tomcat:
