@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public interface ArticleApi {
 
     @ApiOperation(value = "获取文章列表", tags = "文章相关接口")
-    @RequestMapping(value = "/list", method = RequestMethod.POST)
+    @RequestMapping(value = "/list")
     ResponseDTO list(@RequestBody(required = false) ArticleDTO requestDTO) throws Exception;
 
 
