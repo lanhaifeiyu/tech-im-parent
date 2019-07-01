@@ -56,6 +56,9 @@ spring:
         add-properties: true
     mvc:
         static-path-pattern: /resources/static/**
+    sleuth:
+        baggage-keys:
+        - SessionId
 eureka:
     client:
         serviceUrl:
