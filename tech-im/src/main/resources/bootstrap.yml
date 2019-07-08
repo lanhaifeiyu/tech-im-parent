@@ -1,0 +1,11 @@
+spring:
+    cloud:
+        config:
+            label: master
+            uri: http://182.61.49.180:9002
+            name: tech-im-provider
+            profile: dev
+            enabled: true
+        bus:
+            refresh:
+                enabled: true
