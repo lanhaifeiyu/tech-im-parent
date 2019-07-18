@@ -1,6 +1,7 @@
 package com.lhfeiyu.tech.im.controller.demo;
 
-import brave.propagation.ExtraFieldPropagation;
+/*import brave.propagation.ExtraFieldPropagation;*/
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,9 +31,9 @@ public class DemoController {
         return "feign_provider_demo received: " + param + "\n" + new Date().toString();
     }
 
-    @GetMapping("/sleuth/provider/demo")
+    /*@GetMapping("/sleuth/provider/demo")
     public String sleuth_provider_demo(String name) {
         return "hello, " + name + ",SessionId is " + ExtraFieldPropagation.get("SessionId");
-    }
+    }*/
 
 }

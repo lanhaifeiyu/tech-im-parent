@@ -1,8 +1,8 @@
 package com.lhfeiyu.tech.im.config;
 
-import brave.propagation.ExtraFieldPropagation;
+/*import brave.propagation.ExtraFieldPropagation;
 import org.springframework.cloud.sleuth.instrument.web.SleuthWebProperties;
-import org.springframework.cloud.sleuth.instrument.web.TraceWebServletAutoConfiguration;
+import org.springframework.cloud.sleuth.instrument.web.TraceWebServletAutoConfiguration;*/
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.GenericFilterBean;
@@ -21,7 +21,7 @@ import java.util.regex.Pattern;
  * 获取当前的SessionId, 放入Baggage中
  * 注意, 因为不是所有的请求都需要往后传递, 所以会对一些请求跳过执行
  */
-@Component
+/*@Component
 @Order(TraceWebServletAutoConfiguration.TRACING_FILTER_ORDER + 1)
 public class SessionFilter extends GenericFilterBean {
     private Pattern skipPattern = Pattern.compile(SleuthWebProperties.DEFAULT_SKIP_PATTERN);
@@ -40,4 +40,4 @@ public class SessionFilter extends GenericFilterBean {
         }
         filterChain.doFilter(request, response);
     }
-}
+}*/

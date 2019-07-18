@@ -86,9 +86,9 @@ spring:
         bus:
             trace:
                 enabled: true
-    sleuth:
-        baggage-keys:
-            - SessionId
+#    sleuth:
+#        baggage-keys:
+#            - SessionId
 management:
     endpoints:
         jmx:

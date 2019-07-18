@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  */
 @EnableTransactionManagement
 @ComponentScan(basePackages = "com.lhfeiyu.tech")
-@MapperScan(basePackages = "com.lhfeiyu.tech.blog.mapper")
+@MapperScan(basePackages = "com.lhfeiyu.tech.im.mapper")
 //@EnableScheduling
 @EnableFeignClients
 @EnableHystrix

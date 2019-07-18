@@ -6,3 +6,6 @@ http://localhost:9001/tech-blog-provider/feign/consumer/demo
 feign_provider_demo received: empty
 Sun Jun 23 23:16:06 CST 2019
 Sun Jun 23 23:16:06 CST 2019
+
+访问IM demo:
+http://localhost:8889/resources/static/demo/im/index.html
