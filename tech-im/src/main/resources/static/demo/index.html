@@ -2,17 +2,17 @@
 <html>
 <head>
     <title>Hello WebSocket</title>
-    <link href="/webjars/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./main.css" rel="stylesheet">
-    <script src="/webjars/jquery/jquery.min.js"></script>
-    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
-    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
-    <script src="./app.js"></script>
+    <!--<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="/static/vendor/iview/iview.min.css">
+    <link rel="stylesheet" href="./main.css">
 </head>
 <body>
-<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
-    enabled. Please enable
-    Javascript and reload this page!</h2></noscript>
+<noscript>
+    <h2 style="color: #ff0000">
+        Seems your browser doesn't support Javascript! Websocket relies on Javascript being enabled.
+        Please enable Javascript and reload this page!
+    </h2>
+</noscript>
 <div id="main-content" class="container">
     <div class="row">
         <div class="col-md-6">
@@ -49,5 +49,14 @@
         </div>
     </div>
 </div>
+
+<script src="/webjars/jquery/jquery.min.js"></script>
+<script src="/webjars/sockjs-client/sockjs.min.js"></script>
+<script src="/webjars/stomp-websocket/stomp.min.js"></script>
+<script src="./app.js"></script>
+
+<!--<script type="text/javascript" src="/static/vendor/vue/vue.min.js"></script>
+<script type="text/javascript" src="/static/vendor/iview/iview.min.js"></script>
+<script type="text/javascript" src="/static/js/vue/vue.js"></script>-->
 </body>
 </html>

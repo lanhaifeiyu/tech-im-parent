@@ -1,24 +1,90 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th=”http://www.thymeleaf.org” xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8">
-    <title>cloud demo</title>
+    <title>Hello WebSocket</title>
+    <!--<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">-->
+    <link rel="stylesheet" href="/static/vendor/iview/iview.min.css">
+    <link rel="stylesheet" href="/static/demo/main.css">
 </head>
 <body>
-<div id="app" style="text-align: center;">
-    {{message}}
-    <div v-bind:title="message">dff</div>
-    <p v-if="show" v-on:click="toggle">show</p>
-    <ul>
-        <li v-for="i in list">{{i}}</li>
-    </ul>
-    <input v-model="message">
-    <ol>
-        <!-- 创建一个 todo-item 组件的实例 -->
-        <todo-item></todo-item>
-    </ol>
-
+<noscript>
+    <h2 style="color: #ff0000">
+        Seems your browser doesn't support Javascript! Websocket relies on Javascript being enabled.
+        Please enable Javascript and reload this page!
+    </h2>
+</noscript>
+<div id="app" class="container">
+    <div>
+        <span for="connect">WebSocket connection:</span>
+        <i-button id="connect" @click="connect" class="btn btn-default" type="success" :disabled="connected">Connect</i-button>
+        <i-button id="disconnect" @click="disconnect" class="btn btn-default" type="success" :disabled="!connected">Disconnect</i-button>
+    </div>
+    <div style="max-width: 300px;">
+        <span for="name">What is your name?</span>
+        <i-input type="text" id="name" v-model="message" class="form-control" placeholder="Your name here..."/>
+    </div>
+    <div>
+        <i-button id="send" @click="sendName" class="btn btn-default" type="success">Send</i-button>
+    </div>
+    <table id="conversation" v-show="connected" class="table table-striped">
+        <thead>
+        <tr>
+            <th>Greetings</th>
+        </tr>
+        </thead>
+        <tbody id="greetings">
+        <tr v-for="msg in messageList" v-bind:key="'msg-' + msg.id">
+            <td>{{msg.content}}</td>
+        </tr>
+        </tbody>
+    </table>
+    <!--<div class="row">
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="connect">WebSocket connection:</label>
+                    <i-button id="connect" @click="show" class="btn btn-default" type="success">Connect</i-button>
+                    <i-button id="disconnect" @click="show" class="btn btn-default" type="success" disabled="disabled">Disconnect</i-button>
+                </div>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="name">What is your name?</label>
+                    <i-input type="text" id="name" class="form-control" placeholder="Your name here..."/>
+                </div>
+                <i-button id="send" class="btn btn-default" type="success">Send</i-button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table id="conversation" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Greetings</th>
+                </tr>
+                </thead>
+                <tbody id="greetings">
+                </tbody>
+            </table>
+        </div>
+    </div>-->
 </div>
 
+<!--<script src="/webjars/jquery/jquery.min.js"></script>
+<script src="/webjars/sockjs-client/sockjs.min.js"></script>
+<script src="/webjars/stomp-websocket/stomp.min.js"></script>-->
+<script src="/static/vendor/jquery/jquery-3.3.1.min.js"></script>
+<script src="/static/vendor/ws/sockjs.min.js"></script>
+<script src="/static/vendor/ws/stomp.min.js"></script>
+<script src="/static/vendor/vue/vue.min.js"></script>
+<script src="/static/vendor/iview/iview.min.js"></script>
+<script src="/static/demo/app.js"></script>
+
+<!--<script type="text/javascript" src="/static/vendor/vue/vue.min.js"></script>
+<script type="text/javascript" src="/static/vendor/iview/iview.min.js"></script>
+<script type="text/javascript" src="/static/js/vue/vue.js"></script>-->
 </body>
 </html>
