@@ -1,1 +1,16 @@
+spring:
+  thymeleaf:
+    enabled: true
+    cache: false
+  resources:
+    chain:
+      cache: false
+      strategy:
+        content:
+          enabled: true
+          paths: /static/**
+    cache:
+      period: 0
+      cachecontrol:
+        no-cache: true
 
